@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>História das Estruturas de Bancos de Dados</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            background: #306998;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #306998;
+            border-bottom: 3px solid #FFD43B;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        .companies-list {
+            margin-top: 20px;
+        }
+
+        .company-item {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .company-item h3 {
+            margin: 0;
+        }
+
+        .chart-container {
+            margin: 40px 0;
+        }
+
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #306998;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            background: #1a4971;
+        }
+
+        .floating-button i {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>História das Estruturas de Bancos de Dados nas Empresas</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Empresas que Utilizam Estruturas de Bancos de Dados</h2>
+            <div class="companies-list">
+                <div class="company-item">
+                    <h3>Google</h3>
+                    <p>O Google utiliza o Bigtable, um banco de dados NoSQL desenvolvido para armazenar grandes volumes de dados. Ele é usado para diversos serviços do Google, como o Google Search e o Google Maps.</p>
+                </div>
+                <div class="company-item">
+                    <h3>Facebook</h3>
+                    <p>O Facebook utiliza um sistema de banco de dados MySQL com modificações para gerenciar dados de usuários e interações. Além disso, o Facebook usa o Apache Cassandra, um banco de dados NoSQL, para gerenciar grandes volumes de dados distribuídos.</p>
+                </div>
+                <div class="company-item">
+                    <h3>Amazon</h3>
+                    <p>A Amazon utiliza o Amazon RDS (Relational Database Service) e o DynamoDB (NoSQL), ambos altamente escaláveis, para gerenciar os dados de sua plataforma de e-commerce e serviços em nuvem.</p>
+                </div>
+                <div class="company-item">
+                    <h3>Netflix</h3>
+                    <p>O Netflix usa uma combinação de bancos de dados relacionais e NoSQL, como o Cassandra, para gerenciar o vasto catálogo de filmes e séries, além dos dados de usuários e recomendações.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="chart-container">
+            <h2>Exemplo Gráfico: Comparação entre Bancos de Dados Relacionais e NoSQL</h2>
+            <canvas id="dbChart" width="400" height="200"></canvas>
+        </section>
+    </div>
+
+    <a href="/index.html" class="floating-button">
+        <i class="fas fa-arrow-left"></i>
+        Voltar
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctx = document.getElementById('dbChart').getContext('2d');
+        var dbChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Relacional', 'NoSQL'],
+                datasets: [{
+                    label: 'Uso de Banco de Dados nas Empresas',
+                    data: [70, 30],
+                    backgroundColor: ['#306998', '#FFD43B'],
+                    borderColor: ['#306998', '#FFD43B'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }  // Corrigido aqui, fechando a chave corretamente
+        });
+    </script>
+</body>
